@@ -33,7 +33,6 @@ public class AuthenticationService {
             throw new Exception("Incorrect username or password", e);
         }
 
-        final UserDetails userDetails = myUserDetailsService.loadUserByUsername(authenticationRequest.getPhone());
-        return jwtUtil.generateToken(userDetails);
+        return jwtUtil.generateToken(authenticationRequest.getPhone());
     }
 }
